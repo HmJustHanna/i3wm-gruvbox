@@ -1,0 +1,91 @@
+configuration {
+    display-run: "run:";
+}
+
+* {
+    foreground:         #282828;
+    background-color:   @transparent;
+    dark-grey:               #282828;
+    green:              #d79921;
+    
+    transparent: rgba(0,0,0,0);
+    font: "Consolas 17";
+}
+window {
+    width: 30%;
+    location:         center;
+    anchor:           center;
+    transparency:    "screenshot";
+    padding:          0px; 
+    border:           5px;
+    border-color:     @green;
+    background-color: @transparent;
+    spacing: 0;
+    children:         [mainbox];
+    orientation:      horizontal;
+}
+mainbox {
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+message {
+    border-color: @foreground;
+    border:  0px 2px 2px 2px;
+    padding: 5;
+    border-color: @green;
+}
+message {
+    color: @green;
+}
+inputbar {
+    color: @green;  
+    padding: 18px;
+    background-color: @dark-grey;
+    border: 0px 0px 5px 0px;                 /* рамка верхняя */
+    border-color: @green;
+}
+
+
+message {
+    border-color: @foreground;
+}
+entry, prompt, case-indicator {
+    text-font: inherit;
+	text-color: inherit;
+}
+prompt {
+    margin:     0px 0.3em 0em 0em ;
+}
+
+listview {
+    padding: 18px;       
+    border-color: @foreground;   
+    border: 0px 0px 0px 0px;    
+    background-color: @dark-grey;   
+    dynamic: false;
+    lines: 5;             
+}
+element {
+    padding: 5px;    
+    vertical-align: 0.5;
+    border-radius: 0px;
+    background-color: @transparent;  
+    color: @green; 
+}
+element selected {
+    background-color: @green;
+    color: @dark-grey;
+}
+mode-switcher {
+    expand: false;
+    orientation: vertical;
+    spacing: 0px;
+    border: 0px 0px 0px 0px;
+}
+error-message {
+    expand: true;
+    background-color: @dark-grey;
+    border-color: @green;
+    border: 5px;
+}
+
